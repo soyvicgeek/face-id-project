@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es-MX">
+    <head>
+        <title>{% block titulo %}Plantilla base{% endblock %}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block estilos %}{% endblock %}
+    </head>
+
+    <body>
+        {% block cuerpo %}Cuerpo de la plantilla faceIDProject/templates/base.html{% endblock %}
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

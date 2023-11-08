@@ -1,0 +1,62 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block titulo %} Inicio de sesion {% endblock %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'autenticacion/css/login.css' %}"/>
+
+    <!--Siguientes links para agregar Roboto mono font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <!--Siguiete para Roboto Flex-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block cuerpo %}
+    <div class="login-container">
+        <!--Logo login ease-->
+        <div style="text-align: center;">
+            <img src="{% static 'autenticacion/images/login/login_ease.png' %}" class="logo" alt="logo">
+        </div>
+
+        <!--Formulario. De aqui se manda correo electronico y contrasena escuchando el boton, y el rol-->
+        <form id="login-form" method="post">
+
+            <!--Grupo del formulario donde se manda usuario y clave-->
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Usuario" name="username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+
+        <!--Para mostrar mensaje de error en caso de que las credenciales sean erroneas-->
+        <span class="error-message" id="error-message">
+            credenciales no validas
+        </span>
+
+        <div class="login-social-media">
+            <div class="login-google">
+                <img src="{% static 'autenticacion/images/login/2000px-Google_G_Logo.svg_.png' %}">
+                <p>Iniciar con Google</p>
+            </div>
+
+            <div class="login-facebook">
+                <img src="{% static 'autenticacion/images/login/Facebook_f_logo__2019_.svg-removebg-preview.png' %}">
+                <p>Iniciar con Facebook</p>
+            </div>
+        </div>
+
+        <div class="login-face-ia">
+            <div>Inicia sesión con tu rostro!</div>
+        </div>
+
+    </div>
+{% endblock %}

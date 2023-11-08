@@ -1,0 +1,177 @@
+body {
+    font-family: 'Roboto Flex', sans-serif;
+    background: #E1E1E1;
+
+}
+
+.login-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 40px 5px;
+    text-align: center;
+    width: 40%;
+    min-width: fit-content;
+    position: fixed;
+    top: 50%; /* Centra verticalmente en relación con la ventana */
+    left: 50%; /* Centra horizontalmente en relación con la ventana */
+    transform: translate(-50%, -50%); /* Corrige el centro */
+}
+
+.logo{
+    width: 150px;
+    height: auto;
+    margin: 20px;
+}
+
+.form-group{
+    margin-bottom: 15px;
+}
+
+label {
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 70%;
+    padding: 15px;
+    border: none;
+    background-color: #d9dadb;
+    border-radius: 5px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 12pt;
+}
+
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder {
+        font-weight: bold;
+        font-size: 12pt;
+    }
+
+button {
+    font-family: 'Roboto Flex', sans-serif;
+    background-color: #08cfcf;
+    color: #fff;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 60%;
+    font-size: 12pt;
+}
+
+    button:hover{
+        background-color: #07b1b1;
+    }
+
+#login-form{
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none;
+}
+
+/*Estilos para el switch o cambio de sesion*/
+/*De momento, desactivados
+.custom-select {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.role-option {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.role-option.selected {
+    background-color: #007bff;
+    color: #fff;
+}*/
+
+
+.login-social-media{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+}
+
+   .login-social-media img{
+        width: 18px;
+        height: auto;
+        margin: auto 2px;
+    }
+
+    .login-social-media p{
+        margin: auto 0;
+    }
+
+    .login-google{
+        outline: 1px solid rgb(255, 89, 0);
+        border: none;
+        border-radius: 10px;
+        width: 170px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5px;
+        cursor: pointer;
+        margin: 0 2px;
+    }
+
+        .login-google:hover{
+            outline: 2px solid rgb(255, 89, 0);
+        }
+
+    .login-facebook{
+        border: none;
+        border-radius: 10px;
+        width: 170px;
+        padding: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        margin: 0 2px;
+        outline: 1px solid #1277f3;
+    }
+
+        .login-facebook:hover{
+            outline: 2px solid #1068d2;
+        }
+
+.login-face-ia{
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+    padding: 15px 0;
+    width: 80%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+    .login-face-ia:hover{
+        background-color: #2f2e2e;
+    }
+
+    .login-face-ia div{
+        width: 80%;
+    }
+
