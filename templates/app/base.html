@@ -57,7 +57,7 @@
                 Catálogos
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu Categorias -->
+            <!-- Nav Item - Pages Collapse Menu Usuarios -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategorias"
                     aria-expanded="true" aria-controls="collapseCategorias">
@@ -73,7 +73,7 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Pages Collapse Menu Productos -->
+            <!-- Nav Item - Pages Collapse Menu Roles -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProductos"
                     aria-expanded="true" aria-controls="collapseProductos">
@@ -83,7 +83,7 @@
                 <div id="collapseProductos" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Operaciones:</h6>
-                        <a class="collapse-item" href="buttons.html">Listar</a>
+                        <a class="collapse-item" href="{% url 'roles:rol_list' %}">Listar</a>
                         <a class="collapse-item" href="cards.html">Agregar</a>
                         <a class="collapse-item" href="cards.html">Actualizar</a>
                     </div>

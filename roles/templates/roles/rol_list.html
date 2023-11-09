@@ -1,0 +1,70 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Roles</h1>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <a href="{% url 'roles:rol_new' %}" class="btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-save"></i>
+                    </span>
+                    <span class="text">Nuevo Rol</span>
+                </a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Clave</th>
+                                <th>Nombre</th>
+                                <th>Fecha</th>
+                                <th>Activo</th>
+                                <th>Estado</th>
+                                <th>Actualizar</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for rol in roles %}
+                            <tr>
+                                <td>{{ rol.id }}</td>
+                                <td>{{ rol.rol_clave }}</td>
+                                <td>{{ rol.rol_nombre }}</td>
+                                <td>{{ rol.rol_fecha_registro }}</td>
+                                <td>{{ rol.rol_activa }}</td>
+                                <td>{{ rol.rol_estado}}</td>
+                                <td>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="{% url 'roles:rol_update' rol.id %}" class="btn btn-info btn-circle btn-sm">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="{% url 'roles:rol_delete' rol.id %}" class="btn btn-danger btn-circle btn-sm">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+{% endblock %}
