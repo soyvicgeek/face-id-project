@@ -7,12 +7,8 @@ def listar_usuario(request):
     # SELECT * FROM USUARIOS
     usuarios = Usuario.objects.all()
     # Diccionario con las usuario
-    data = {
-        'usuarios': usuarios
-    }
     return render(request,
-                  'usuarios/usuario_list.html',
-                  context=data)
+                  'usuarios/usuario_list.html', {'usuarios': usuarios})
 def agregar_usuario(request):
     data = {
         'form': UsuarioForm()
