@@ -37,6 +37,12 @@
             <button type="submit">Iniciar Sesión</button>
         </form>
 
+        <!--Link que redirige a register-->
+        <div class="register-link">
+            Aún no tienes una cuenta?
+            <a href="{% url 'register' %}">Registrate</a>
+        </div>
+
         <!--Para mostrar mensaje de error en caso de que las credenciales sean erroneas-->
         <span class="error-message" id="error-message">
             credenciales no validas

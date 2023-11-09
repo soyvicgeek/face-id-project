@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto Flex', sans-serif;
     background: #E1E1E1;
-
+    overflow: auto;
 }
 
 .login-container {
@@ -16,6 +16,7 @@ body {
     top: 50%; /* Centra verticalmente en relación con la ventana */
     left: 50%; /* Centra horizontalmente en relación con la ventana */
     transform: translate(-50%, -50%); /* Corrige el centro */
+
 }
 
 .logo{
@@ -68,7 +69,8 @@ button {
         background-color: #07b1b1;
     }
 
-#login-form{
+.register-link {
+    margin: 15px auto;
     text-align: center;
 }
 

@@ -1,0 +1,44 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block titulo %} Registro {% endblock %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'autenticacion/css/register.css' %}"/>
+{% endblock %}
+
+{% block cuerpo %}
+    <div class="login-container">
+        <!--Logo login ease-->
+        <div style="text-align: center;">
+            <img src="{% static 'autenticacion/images/login/login_ease.png' %}" class="logo" alt="logo">
+        </div>
+
+        <!--Formulario. De aqui se manda correo electronico y contrasena escuchando el boton, y el rol-->
+        <form id="login-form" method="post">
+
+            <!--Grupo del formulario donde se manda usuario y clave-->
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" placeholder="Nombre" name="nombre" maxlength="100" required>
+            </div>
+            <div class="form-group">
+                <label for="usuario">Nombre de usuario</label>
+                <input type="text" id="usuario" placeholder="Usuario" name="usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave" name="clave" maxlength="8" minlength="8" placeholder="Contraseña" required>
+                <i style="display: none" class="fas fa-eye-slash" id="toggle-password"></i>
+            </div>
+            <button type="submit">Registrarme</button>
+        </form>
+
+    </div>
+
+    {% block scripts %}
+        <script src="{% static 'autenticacion/js/js-fontawesome/all.js' %}"></script>
+        <script src="{% static 'autenticacion/js/register.js' %}"></script>
+    {% endblock %}
+
+{% endblock %}
