@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from usuarios.models import Usuario
 from usuarios.forms import UsuarioForm
 
@@ -21,9 +22,9 @@ def agregar_usuario(request):
         # Validar la información
         if formulario.is_valid():
             formulario.save()
-            data['mensaje'] = 'Usuario guardada'
-        else:
-            data['form'] = formulario
+            messages.success(request, "Agregado correctamente")
+            return redirect(to='usuarios:usuario_list')
+        data['form'] = formulario
 
     return render(request, 'usuarios/usuario_new.html', data )
 
@@ -37,6 +38,7 @@ def actualizar_usuario(request, id):
         formulario = UsuarioForm(data=request.POST, instance=usuario)
         if formulario.is_valid():
             formulario.save()
+            messages.success(request, "Actualizado correctamente")
             return redirect(to='usuarios:usuario_list')
         #Regresarle al formulario con lo errores al cliente
         data['form'] = formulario
