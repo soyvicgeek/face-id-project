@@ -1,18 +1,16 @@
-'''
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib import messages
-from usuarios.models import Usuario
-from usuarios.forms import UsuarioForm
-'''
-'''
+from perfiles.models import Perfil
+#from perfil.forms import UsuarioForm
+
 class UsuarioListView(ListView):
-    template_name = 'usuarios/usuario_list.html'
-    model = Usuario
+    template_name = 'usuarios/usuarios_list.html'
+    model = Perfil
     context_object_name = 'usuarios'
     paginate_by = 5
-
+'''
 class UsuarioCreateView(CreateView):
     form_class = UsuarioForm
     template_name = 'usuarios/usuario_new.html'

@@ -7,9 +7,12 @@ class Perfil(models.Model):
     biografia = models.TextField(default='Mi Biografía', blank=True, null=True)
     suscripcion = models.BooleanField(default=False, blank=True)
     created = models.DateTimeField(auto_now_add=True)
+    created_by_admin = models.BooleanField(default=True, blank=True, null=True, verbose_name='Creado por Admin')
+
+    class Meta:
+        verbose_name = 'Perfil'
+        verbose_name_plural = 'Perfiles'
+        ordering = ['-id']
 
     def __str__(self):
         return f"Perfil de {self.usuario.username}"
-
-    class Meta:
-        verbose_name_plural = "Perfiles"
