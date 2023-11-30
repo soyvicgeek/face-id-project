@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'gestion',
     'perfiles',
     'logs',
+    'suscripciones',
 ]
 
 # Configuración de crispy forms bootstrap5
