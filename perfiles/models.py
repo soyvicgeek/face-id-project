@@ -10,3 +10,6 @@ class Perfil(models.Model):
 
     def __str__(self):
         return f"Perfil de {self.usuario.username}"
+
+    class Meta:
+        verbose_name_plural = "Perfiles"
