@@ -6,16 +6,16 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Productos</h1>
+        <h1 class="h3 mb-2 text-gray-800">Usuarios</h1>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <a href="#" class="btn btn-primary btn-icon-split">
+                <a href="{% url 'usuario_new' %}" class="btn btn-primary btn-icon-split">
                     <span class="icon text-white-50">
                         <i class="fas fa-save"></i>
                     </span>
-                    <span class="text">Nuevo Producto</span>
+                    <span class="text">Nuevo Usuario</span>
                 </a>
             </div>
             <div class="card-body">
@@ -24,34 +24,34 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Categoria</th>
+                                <th>Usuario</th>
                                 <th>Nombre</th>
-                                <th>Descripcion</th>
-                                <th>Precio Normal</th>
-                                <th>Precio de Oferta</th>
+                                <th>Email</th>
+                                <th>Rol</th>
+                                <th>Activo</th>
                                 <th>Actualizar</th>
                                 <th>Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
-                        {% for producto in productos %}
+                        {% for usuario in usuarios %}
                             <tr>
-                                <td>{{ producto.id_producto }}</td>
-                                <td>{{ producto.id_categoria }}</td>
-                                <td>{{ producto.nombre_corto }}</td>
-                                <td>{{ producto.descripcion }}</td>
-                                <td>{{ producto.producto_normal }}</td>
-                                <td>{{ producto.producto_oferta }}</td>
+                                <td>{{ usuario.usuario.id }}</td>
+                                <td>{{ usuario.usuario.username }}</td>
+                                <td>{{ usuario.usuario.first_name }} {{ usuario.usuario.last_name }}</td>
+                                <td>{{ usuario.usuario.email }}</td>
+                                <td>Admin</td>
+                                <td>{{ usuario.usuario.is_active }}</td>
                                 <td>
                                     <div class="d-flex justify-content-center">
-                                        <a href="{% url 'catalogos:producto_update' producto.id_producto %}" class="btn btn-info btn-circle btn-sm">
+                                        <a href="{% url 'usuario_update' usuario.usuario.id %}" class="btn btn-info btn-circle btn-sm">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center">
-                                        <a href="{% url 'catalogos:producto_delete' producto.id_producto %}" class="btn btn-danger btn-circle btn-sm">
+                                        <a href="{% url 'usuario_delete' usuario.usuario.id %}" class="btn btn-danger btn-circle btn-sm">
                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </div>
@@ -62,7 +62,7 @@
                     </table>
                 </div>
 
-                <ul class="pagination">
+                <!--<ul class="pagination">
                     <li class="paginate_button page-item previous disabled" id="dataTable_previous">
                         <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">
                             Previous
@@ -103,7 +103,7 @@
                             Next
                         </a>
                     </li>
-                </ul>
+                </ul>-->
 
                 <div class="pagination">
                     <span class="step-links">
