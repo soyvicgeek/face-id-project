@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'gestion',
-    'usuarios',
-    'roles',
+    'perfiles',
+    'logs',
 ]
 
 # Configuración de crispy forms bootstrap5
